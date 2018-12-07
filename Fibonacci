@@ -1,0 +1,29 @@
+* ---------------------------
+* PROGRAMA QUE CALCULA O FIBONACCI
+* ---------------------------
+DEFINE DATA LOCAL
+1 #ENTRADA       (N10)
+1 #IND           (N10) INIT <1>
+1 #IND-Q         (N10)
+1 #IND2          (N10)
+1 #RESULT        (N10)
+1 #TL-ENTRADA    (N10)
+1 #TL-RESULT     (N10)
+END-DEFINE
+* ============================
+*
+INPUT WITH TEXT 'DIGITE A ENTRADA' USING MAP 'RNSM0005'
+MOVE #TL-ENTRADA TO #ENTRADA
+REPEAT
+  IF #IND-Q LT #ENTRADA
+    ADD 1 TO #IND-Q
+    COMPUTE #RESULT = #IND + #IND2
+    MOVE #RESULT TO #TL-RESULT
+    WRITE '=' #TL-RESULT
+    MOVE #IND TO #IND2
+    MOVE #RESULT TO #IND
+  ELSE
+    ESCAPE BOTTOM
+  END-IF
+END-REPEAT
+END
